@@ -35,3 +35,27 @@ def site_0(site_name):
     return site_name
 
 print(site_0('jabj.ir')) #Welcome to jabj.ir
+
+# https://www.geeksforgeeks.org/chain-multiple-decorators-in-python/
+# chain-multiple-decorators-in-python
+# code for testing decorator chaining
+def decor1(func):
+    def inner():
+        x = func()
+        print('Hello 2')
+        return x * x
+    return inner
+ 
+def decor(func):
+    def inner():
+        x = func()
+        print('Hello 1')
+        return 2 * x
+    return inner
+ 
+@decor1 #priority 2
+@decor  #priority 1
+def num():
+    return 10
+ 
+print(num()) # Hello 1 Hello 2 400
