@@ -59,3 +59,44 @@ def num():
     return 10
  
 print(num()) # Hello 1 Hello 2 400
+
+
+def decor1(func):
+        def wrap():
+               print("************")
+               func()
+               print("************")
+        return wrap
+
+def decor2(func):
+        def wrap():
+               print("@@@@@@@@@@@@")
+               func()
+               print("@@@@@@@@@@@@")
+        return wrap
+
+def decor3(func):
+        def wrap():
+               print("!!!!!!!!!!!!!")
+               func()
+               print("!!!!!!!!!!!!")
+        return wrap        
+     
+@decor1
+        
+@decor2
+
+@decor3
+def sayhellogfg():
+         print("Hello")
+
+@decor1
+        
+@decor2
+
+@decor3         
+def saygfg():
+         print("GeekforGeeks")
+         
+sayhellogfg()
+saygfg()
