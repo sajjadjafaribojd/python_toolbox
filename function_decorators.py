@@ -34,3 +34,4 @@ def welcome_message_0(func):
 def site_0(site_name):
     return site_name
 
+print(site_0('jabj.ir')) #Welcome to jabj.ir
